@@ -1,0 +1,104 @@
+{
+  "rabbit_version": "4.0.8",
+  "rabbitmq_version": "4.0.8",
+  "product_name": "RabbitMQ",
+  "product_version": "4.0.8",
+  "rabbitmq_definition_format": "cluster",
+  "original_cluster_name": "rabbit@3b5d503b46c8",
+  "explanation": "Definitions of cluster 'rabbit@3b5d503b46c8'",
+  "users": [
+    {
+      "name": "admin",
+      "password_hash": "V5upHztPDoia3PjjZECfEr7qF9STkN4ZwICYf43FYdGHepf8",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": [
+        "administrator"
+      ],
+      "limits": {}
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/",
+      "description": "Default virtual host",
+      "metadata": {
+        "description": "Default virtual host",
+        "tags": [],
+        "default_queue_type": "classic"
+      },
+      "tags": [],
+      "default_queue_type": "classic"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [
+    {
+      "name": "cluster_tags",
+      "value": []
+    },
+    {
+      "name": "internal_cluster_id",
+      "value": "rabbitmq-cluster-id-CaQbbBw8b9WFJWZ5ORTohw"
+    }
+  ],
+  "policies": [],
+  "queues": [
+    {
+      "name": "order.created",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "classic"
+      }
+    },
+    {
+      "name": "order.notification",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "classic"
+      }
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "microorder.orders",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "microorder.orders",
+      "vhost": "/",
+      "destination": "order.created",
+      "destination_type": "queue",
+      "routing_key": "order.created",
+      "arguments": {}
+    },
+    {
+      "source": "microorder.orders",
+      "vhost": "/",
+      "destination": "order.notification",
+      "destination_type": "queue",
+      "routing_key": "order.notification",
+      "arguments": {}
+    }
+  ]
+}
