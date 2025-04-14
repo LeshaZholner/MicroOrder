@@ -3,19 +3,16 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 
 var productConnectionString = builder.Configuration.GetConnectionString("MicroOrderProductConnectionString");
 builder.Services.AddDbContext<ProductDbContext>(options =>
 {
     options.UseSqlServer(productConnectionString);
+    options.
 });
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 
