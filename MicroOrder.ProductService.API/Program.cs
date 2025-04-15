@@ -9,7 +9,6 @@ var productConnectionString = builder.Configuration.GetConnectionString("MicroOr
 builder.Services.AddDbContext<ProductDbContext>(options =>
 {
     options.UseSqlServer(productConnectionString);
-    options.
 });
 
 var app = builder.Build();

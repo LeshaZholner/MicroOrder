@@ -6,17 +6,17 @@ namespace MicroOrder.OrderService.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class OrderController : ControllerBase
+public class OrdersController : ControllerBase
 {
     private readonly ICreateOrderService _createOrderService;
 
-    public OrderController(ICreateOrderService createOrderService)
+    public OrdersController(ICreateOrderService createOrderService)
     {
         _createOrderService = createOrderService;
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateOrderRequest createOrderRequest)
+    public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequest createOrderRequest)
     {
         var newOrder = await _createOrderService.CreateOrder(createOrderRequest);
 

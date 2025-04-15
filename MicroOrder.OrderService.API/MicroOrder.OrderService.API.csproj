@@ -9,9 +9,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
     <PackageReference Include="MongoDB.Driver" Version="3.3.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MicroOrder.Contracts\MicroOrder.Contracts.csproj" />
     <ProjectReference Include="..\MicroOrder.ProductService.Client\MicroOrder.ProductService.Client.csproj" />
   </ItemGroup>
 

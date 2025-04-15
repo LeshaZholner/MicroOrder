@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MicroOrder.NotificationService.Contracts\MicroOrder.NotificationService.Contracts.csproj" />
     <ProjectReference Include="..\MicroOrder.OrderProcessor.Contracts\MicroOrder.OrderProcessor.Contracts.csproj" />
     <ProjectReference Include="..\MicroOrder.ProductService.Client\MicroOrder.ProductService.Client.csproj" />
   </ItemGroup>

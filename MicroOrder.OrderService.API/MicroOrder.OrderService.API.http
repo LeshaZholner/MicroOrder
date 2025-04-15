@@ -1,6 +1,6 @@
 @MicroOrder.OrderService.API_HostAddress = https://localhost:7287
 
-POST {{MicroOrder.OrderService.API_HostAddress}}/api/order
+POST {{MicroOrder.OrderService.API_HostAddress}}/api/orders
 Content-Type: application/json
 
 {
