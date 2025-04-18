@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.Identity.API", "MicroOrder.Identity.API\MicroOrder.Identity.API.csproj", "{4586488A-4E03-4943-A0F4-8233879E0CE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4586488A-4E03-4943-A0F4-8233879E0CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4586488A-4E03-4943-A0F4-8233879E0CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4586488A-4E03-4943-A0F4-8233879E0CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4586488A-4E03-4943-A0F4-8233879E0CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1DAFECA-D9D7-41EF-AC67-5523169DFD99}
+	EndGlobalSection
+EndGlobal

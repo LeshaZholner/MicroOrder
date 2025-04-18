@@ -1,5 +1,6 @@
 ﻿using MicroOrder.OrderService.API.Application.Services;
 using MicroOrder.OrderService.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroOrder.OrderService.API.Controllers;
@@ -15,6 +16,7 @@ public class OrdersController : ControllerBase
         _createOrderService = createOrderService;
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequest createOrderRequest)
     {
