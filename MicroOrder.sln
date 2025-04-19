@@ -3,17 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.API", "MicroOrder.API\MicroOrder.API.csproj", "{EA905F5B-44EA-4ACE-9B88-96B70936E088}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.OrderProcessor", "MicroOrder.OrderProcessor\MicroOrder.OrderProcessor.csproj", "{521BF592-A24D-4BBD-8A35-8287371331E6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.ProductService.API", "MicroOrder.ProductService.API\MicroOrder.ProductService.API.csproj", "{162FB7EF-42D8-47B1-83F4-936ED250984A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.ProductService.Client", "MicroOrder.ProductService.Client\MicroOrder.ProductService.Client.csproj", "{6C3A7AFC-0666-49FC-96BD-FB31A21E599A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.ProductService.Data", "MicroOrder.ProductService.Data\MicroOrder.ProductService.Data.csproj", "{931C0A9B-8743-48E8-ACB8-4B92DE805883}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.OrderProcessor.Contracts", "MicroOrder.OrderProcessor.Contracts\MicroOrder.OrderProcessor.Contracts.csproj", "{419CA945-71DD-4385-B573-78CC3E554D47}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.NotificationService", "MicroOrder.NotificationService\MicroOrder.NotificationService.csproj", "{75172D26-0533-4D53-86B9-752EC1A44776}"
 EndProject
@@ -23,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.Contracts", "Mic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.WebApp", "MicroOrder.WebApp\MicroOrder.WebApp.csproj", "{F7AC53B0-51DB-4630-8E56-E406DE11FA7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MictoOrder.BasketService.API", "MictoOrder.BasketService.API\MictoOrder.BasketService.API.csproj", "{A637ACAC-2E7E-4B40-A65B-7BEA72EC6DF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.BasketService.API", "MicroOrder.BasketService.API\MicroOrder.BasketService.API.csproj", "{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA905F5B-44EA-4ACE-9B88-96B70936E088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA905F5B-44EA-4ACE-9B88-96B70936E088}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA905F5B-44EA-4ACE-9B88-96B70936E088}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA905F5B-44EA-4ACE-9B88-96B70936E088}.Release|Any CPU.Build.0 = Release|Any CPU
-		{521BF592-A24D-4BBD-8A35-8287371331E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{521BF592-A24D-4BBD-8A35-8287371331E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{521BF592-A24D-4BBD-8A35-8287371331E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{521BF592-A24D-4BBD-8A35-8287371331E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{162FB7EF-42D8-47B1-83F4-936ED250984A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{162FB7EF-42D8-47B1-83F4-936ED250984A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{162FB7EF-42D8-47B1-83F4-936ED250984A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,10 +37,6 @@ Global
 		{931C0A9B-8743-48E8-ACB8-4B92DE805883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{931C0A9B-8743-48E8-ACB8-4B92DE805883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{931C0A9B-8743-48E8-ACB8-4B92DE805883}.Release|Any CPU.Build.0 = Release|Any CPU
-		{419CA945-71DD-4385-B573-78CC3E554D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{419CA945-71DD-4385-B573-78CC3E554D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{419CA945-71DD-4385-B573-78CC3E554D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{419CA945-71DD-4385-B573-78CC3E554D47}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75172D26-0533-4D53-86B9-752EC1A44776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{75172D26-0533-4D53-86B9-752EC1A44776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75172D26-0533-4D53-86B9-752EC1A44776}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,10 +53,10 @@ Global
 		{F7AC53B0-51DB-4630-8E56-E406DE11FA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7AC53B0-51DB-4630-8E56-E406DE11FA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7AC53B0-51DB-4630-8E56-E406DE11FA7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A637ACAC-2E7E-4B40-A65B-7BEA72EC6DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A637ACAC-2E7E-4B40-A65B-7BEA72EC6DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A637ACAC-2E7E-4B40-A65B-7BEA72EC6DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A637ACAC-2E7E-4B40-A65B-7BEA72EC6DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
