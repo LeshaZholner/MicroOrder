@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.WebApp", "MicroO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.BasketService.API", "MicroOrder.BasketService.API\MicroOrder.BasketService.API.csproj", "{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.BasketService.Client", "MicroOrder.BasketService.Client\MicroOrder.BasketService.Client.csproj", "{DA15A59D-5675-4325-BCA3-8F5D9B7C6605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrder.BasketService.Contracts", "MicroOrder.BasketService.Contracts\MicroOrder.BasketService.Contracts.csproj", "{EE3EE5F0-BB8A-4D6C-A80B-35AEA66E8BEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1BA3A5E-54FE-4EC0-9327-E8B16DC3DE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA15A59D-5675-4325-BCA3-8F5D9B7C6605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA15A59D-5675-4325-BCA3-8F5D9B7C6605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA15A59D-5675-4325-BCA3-8F5D9B7C6605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA15A59D-5675-4325-BCA3-8F5D9B7C6605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE3EE5F0-BB8A-4D6C-A80B-35AEA66E8BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE3EE5F0-BB8A-4D6C-A80B-35AEA66E8BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE3EE5F0-BB8A-4D6C-A80B-35AEA66E8BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE3EE5F0-BB8A-4D6C-A80B-35AEA66E8BEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
