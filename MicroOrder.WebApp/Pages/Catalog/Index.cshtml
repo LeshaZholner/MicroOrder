@@ -1,0 +1,19 @@
+﻿@page
+@model MicroOrder.WebApp.Pages.Catalog.IndexModel
+@{
+}
+
+<div class="row">
+    @foreach (var catalogItem in Model.CatalogItems)
+    {
+        <div class="col-3">
+            <div class="card">
+                <div cite="card-body">
+                    <h3>@catalogItem.Name</h3>
+                    <span>@catalogItem.Price</span>
+                    <button class="btn btn-primary">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
