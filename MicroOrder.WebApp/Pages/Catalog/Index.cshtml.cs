@@ -1,10 +1,12 @@
 using MicroOrder.ProductService.Client;
 using MicroOrder.WebApp.Models.Catalog;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MicroOrder.WebApp.Pages.Catalog;
 
+[Authorize]
 public class IndexModel : PageModel
 {
     private readonly IProductService _productService;
