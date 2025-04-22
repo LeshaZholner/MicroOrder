@@ -1,18 +1,21 @@
 using MicroOrder.ProductService.Client;
 using MicroOrder.BasketService.Client;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using MicroOrder.WebApp.Infrastructure.Authentication;
+using MicroOrder.WebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+builder.Services.AddScoped<LogOutService, LogOutService>();
 builder.Services.AddProductService(builder.Configuration);
 builder.Services.AddBasketService(builder.Configuration);
 
 // Auth
+builder.Services.AddSingleton<ITicketStore, MemoryTicketStore>();
 builder.Services.AddAuthorization();
 builder.Services
     .AddAuthentication(options =>
@@ -22,6 +25,7 @@ builder.Services
     })
     .AddCookie(options =>
     {
+        options.SessionStore = new MemoryTicketStore();
         options.Cookie.Name = "mycookie";
     })
     .AddOpenIdConnect(options =>
@@ -43,12 +47,6 @@ builder.Services
         options.Scope.Add("orderserviceapi.fullaccess");
         options.Scope.Add("productserviceapi.fullaccess");
         options.Scope.Add("basketserviceapi.fullaccess");
-
-        options.Events.OnRedirectToIdentityProvider = context =>
-        {
-            Console.WriteLine($"Redirect URI: {context.ProtocolMessage.RedirectUri}");
-            return Task.CompletedTask;
-        };
     });
 
 var app = builder.Build();

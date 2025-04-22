@@ -29,7 +29,7 @@ namespace MicroOrder.Identity.API
                 {
                     Scopes = { "productserviceapi.fullaccess" },
                 },
-                new ApiResource("basketserviceapi.fullaccess", "Basket Service API")
+                new ApiResource("basketserviceapi", "Basket Service API")
                 {
                     Scopes = { "basketserviceapi.fullaccess" },
                 }

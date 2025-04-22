@@ -26,7 +26,12 @@ namespace MicroOrder.Identity.API
                     options.Events.RaiseInformationEvents = true;
                     options.Events.RaiseFailureEvents = true;
                     options.Events.RaiseSuccessEvents = true;
+
+                    options.ServerSideSessions.UserDisplayNameClaimType = "name";
+                    options.ServerSideSessions.RemoveExpiredSessions = true;
+                    options.ServerSideSessions.ExpiredSessionsTriggerBackchannelLogout = true;
                 })
+                .AddServerSideSessions()
                 .AddInMemoryIdentityResources(Config.IdentityResources)
                 .AddInMemoryApiScopes(Config.ApiScopes)
                 .AddInMemoryClients(Config.Clients)

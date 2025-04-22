@@ -1,10 +1,6 @@
 ﻿@page
 @model MicroOrder.WebApp.Pages.Catalog.IndexModel
 
-﻿@using Microsoft.AspNetCore.Authentication
-@{
-}
-
 <div class="row">
     @foreach (var catalogItem in Model.CatalogItems)
     {
@@ -18,22 +14,4 @@
             </div>
         </div>
     }
-
-    <dl>
-        @foreach (var claim in User.Claims)
-        {
-            <dt>@claim.Type</dt>
-            <dd>@claim.Value</dd>
-        }
-    </dl>
-
-    <h2>Properties</h2>
-
-    <dl>
-        @foreach (var prop in (await HttpContext.AuthenticateAsync()).Properties.Items)
-        {
-            <dt>@prop.Key</dt>
-            <dd>@prop.Value</dd>
-        }
-    </dl>
 </div>

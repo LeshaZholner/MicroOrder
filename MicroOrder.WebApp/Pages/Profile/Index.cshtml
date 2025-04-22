@@ -1,0 +1,85 @@
+﻿@page
+@model MicroOrder.WebApp.Pages.Profile.IndexModel
+﻿@using Microsoft.AspNetCore.Authentication
+
+<style>
+    .title {
+        font-weight: bold;
+        color: black;
+        border: 1px solid #ccc;
+        text-align: right;
+        overflow: hidden;
+    }
+
+    .value {
+        color: #123ab8;
+        border: 1px solid #ccc;
+        overflow: hidden;
+    }
+
+    h3 {
+        background-color: #cd37c3;
+        color: white;
+    }
+
+    textarea {
+        width: 100%;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <a class="btn btn-primary" asp-page="/Profile/Logout">LogOut</a>
+    </div>
+    <div class="col-4 px-1">
+        <h3>@Model.AccessToken.Name</h3>
+        <div>
+            <p>
+                <textarea rows="10" asp-for="@Model.AccessToken.Token"></textarea>
+            </p>
+        </div>
+        @foreach (var claim in Model.AccessToken.Claims)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 title" title="@claim.Type">@claim.Type</div>
+                    <div class="col-9 value" title="@claim.Value">@claim.Value</div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-4 px-1">
+        <h3>@Model.IdToken.Name</h3>
+        <div>
+            <p>
+                <textarea rows="10" asp-for="@Model.IdToken.Token"></textarea>
+            </p>
+        </div>
+        @foreach (var claim in Model.IdToken.Claims)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 title" title="@claim.Type">@claim.Type</div>
+                    <div class="col-9 value" title="@claim.Value">@claim.Value</div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-4 px-1">
+        <h3>@Model.UserClaims.Name</h3>
+        <div>
+            <p>
+                <textarea rows="10" asp-for="@Model.UserClaims.Token"></textarea>
+            </p>
+        </div>
+        @foreach (var claim in Model.UserClaims.Claims)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 title" title="@claim.Type">@claim.Type</div>
+                    <div class="col-9 value" title="@claim.Value">@claim.Value</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
