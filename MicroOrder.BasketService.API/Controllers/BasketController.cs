@@ -19,7 +19,7 @@ public class BasketController : ControllerBase
     {
         var basket = await _basketService.GetBasket(Guid.NewGuid());
 
-        if (basket == null)
+        if (basket is null)
         {
             return NotFound();
         }

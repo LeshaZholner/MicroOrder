@@ -1,0 +1,43 @@
+﻿@page "/catalog"
+@using MicroOrder.ProductService.Client;
+@inject IProductService ProductService;
+
+<MudContainer>
+    <MudGrid Spacing="6">
+        @foreach (var catalogItem in Items)
+        {
+            <MudItem xs="12" md="6" lg="3">
+                <MudCard class="rounded-lg">
+                    <a href="@catalogItem.Url">
+                        <MudCardMedia Image="https://freshcart-next-js.vercel.app/images/products/product-img-2.jpg" Height="150" />
+                    </a>
+                    <MudCardContent>
+                        <MudLink Href="@catalogItem.Url" Underline="Underline.None">
+                            <MudText Typo="Typo.h6" Color="Color.Dark">@catalogItem.Name</MudText>
+                        </MudLink>
+                        <MudRating ReadOnly="true" SelectedValue="4"/>
+                        <MudText>@catalogItem.Price</MudText>
+                        <MudButton Variant="Variant.Outlined" Size="Size.Small" StartIcon="@Icons.Material.Filled.Add">Add</MudButton>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+</MudContainer>
+
+@code {
+    private List<CatalogItem> Items { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var responseItems = await ProductService.GetProducts(CancellationToken.None);
+
+        Items = responseItems.Products.Select(x => new CatalogItem
+        {
+            Id = x.Id,
+            Name = x.Name,
+            Price = x.Price,
+            Url = $"/product/{x.Id}"
+        }).ToList();
+    }
+}

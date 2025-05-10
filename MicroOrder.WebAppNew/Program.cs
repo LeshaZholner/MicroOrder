@@ -1,22 +1,24 @@
+using MicroOrder.WebAppNew.Components;
 using MicroOrder.ProductService.Client;
 using MicroOrder.BasketService.Client;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-using MicroOrder.WebApp.Infrastructure.Authentication;
-using MicroOrder.WebApp.Services;
+using MicroOrder.WebAppNew.Infrastructure.Authentication;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages()
-    .AddRazorRuntimeCompilation();
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 
-builder.Services.AddScoped<LogOutService, LogOutService>();
 builder.Services.AddProductService(builder.Configuration);
 builder.Services.AddBasketService(builder.Configuration);
 
+builder.Services.AddMudServices();
+
 // Auth
-builder.Services.AddSingleton<ITicketStore, MemoryTicketStore>();
+//builder.Services.AddSingleton<ITicketStore, MemoryTicketStore>();
 builder.Services.AddAuthorization();
 builder.Services
     .AddAuthentication(options =>
@@ -52,22 +54,19 @@ builder.Services
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 
-app.UseRouting();
 
-app.UseAuthentication();
-app.UseAuthorization();
+app.UseAntiforgery();
 
 app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
 
 app.Run();

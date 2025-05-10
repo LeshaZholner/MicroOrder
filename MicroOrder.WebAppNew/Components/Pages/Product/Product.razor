@@ -1,0 +1,51 @@
+﻿@page "/product/{ProductId:guid}"
+@using MicroOrder.ProductService.Client;
+@using MicroOrder.ProductService.Data
+@inject IProductService ProductService;
+
+<MudContainer>
+    @if (ProductItem is null)
+    {
+        <MudText Typo="Typo.h1">Not Found!</MudText>
+    }
+    else
+    {
+        <MudGrid>
+            <MudItem xs="12" sm="6">
+                <MudImage Src="https://freshcart-next-js.vercel.app/images/products/product-single-img-4.jpg" Fluid="true" />
+            </MudItem>
+            <MudItem xs="12" sm="6">
+                <MudText Typo="Typo.h1">@ProductItem.Name</MudText>
+                <MudRating ReadOnly="true" SelectedValue="4" />
+                <MudText Typo="Typo.subtitle1">$@ProductItem.Price</MudText>
+                <MudText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</MudText>
+                <MudButton Variant="Variant.Outlined">Add to cart</MudButton>
+            </MudItem>
+        </MudGrid>
+    }
+</MudContainer>
+
+@code {
+    [Parameter]
+    public Guid ProductId { get; set; }
+
+    private ProductItem? ProductItem { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new GetProductRequest
+        {
+            ProductId = ProductId
+        };
+
+        var productResponse = await ProductService.GetProduct(request, CancellationToken.None);
+        ProductItem = new ProductItem
+        {
+            Id = productResponse.Product.Id,
+            Name = productResponse.Product.Name,
+            Price = productResponse.Product.Price,
+            Quantity = productResponse.Product.Quantity
+        };
+
+    }
+}

@@ -1,0 +1,74 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="MyCustomTheme" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Color="Color.Transparent" Fixed="false">
+        <NavMenu />
+    </MudAppBar>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>
+
+@code {
+    MudTheme MyCustomTheme = new MudTheme
+    {
+        Typography = new Typography
+        {
+            H1 = new H1Typography
+            {
+                FontSize = "var(--mo-typography-h1-size)",
+                FontWeight = "var(--mo-typography-h1-weight)",
+                LineHeight = "var(--mo-typography-h1-lineheight)"
+            },
+            H2 = new H2Typography
+            {
+                FontSize = "var(--mo-typography-h2-size)",
+                FontWeight = "var(--mo-typography-h2-weight)",
+                LineHeight = "var(--mo-typography-h2-lineheight)"
+            },
+            H3 = new H2Typography
+            {
+                FontSize = "var(--mo-typography-h3-size)",
+                FontWeight = "var(--mo-typography-h3-weight)",
+                LineHeight = "var(--mo-typography-h3-lineheight)"
+            },
+            H4 = new H2Typography
+            {
+                FontSize = "var(--mo-typography-h4-size)",
+                FontWeight = "var(--mo-typography-h4-weight)",
+                LineHeight = "var(--mo-typography-h4-lineheight)"
+            },
+            H5 = new H2Typography
+            {
+                FontSize = "var(--mo-typography-h5-size)",
+                FontWeight = "var(--mo-typography-h5-weight)",
+                LineHeight = "var(--mo-typography-h5-lineheight)"
+            },
+            H6 = new H2Typography
+            {
+                FontSize = "var(--mo-typography-h6-size)",
+                FontWeight = "var(--mo-typography-h6-weight)",
+                LineHeight = "var(--mo-typography-h6-lineheight)"
+            },
+            Subtitle1 = new Subtitle1Typography
+            {
+                FontSize = "var(--mo-typography-subtitle1-size)"
+            },
+            Subtitle2 = new Subtitle2Typography
+            {
+                FontSize = "var(--mo-typography-subtitle2-size)"
+            }
+        }
+    };
+}
